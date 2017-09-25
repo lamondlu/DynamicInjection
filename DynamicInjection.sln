@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicInjection.Console", "DynamicInjection.Console\DynamicInjection.Console.csproj", "{CDB9D114-7AEF-4787-967C-1A0AADB07587}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicInjection", "DynamicInjection.Console\DynamicInjection.csproj", "{CDB9D114-7AEF-4787-967C-1A0AADB07587}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceA", "ServiceA\ServiceA.csproj", "{26B226DB-11D7-4551-8904-7E17A633EB72}"
 EndProject

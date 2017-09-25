@@ -30,13 +30,18 @@ namespace DynamicInjection
         {
             public void Configuration(IAppBuilder appBuilder)
             {
+                //定义Autofac容器创建器
                 var builder = new ContainerBuilder();
 
+                //注入Api服务
                 BuildControllers(builder);
 
+                //生成Autofac容器
                 var container = builder.Build();
 
+                //在Owin管道中加入Autofac中间件
                 appBuilder.UseAutofacMiddleware(container);
+
 
                 HttpConfiguration config = new HttpConfiguration();
                 config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
@@ -44,7 +49,7 @@ namespace DynamicInjection
                 config.MapHttpAttributeRoutes();
                 config.Routes.MapHttpRoute(
                    name: "DefaultApi",
-                   routeTemplate: "api/{controller}/{action}/{id}",
+                   routeTemplate: "api/{controller}/{id}",
                    defaults: new { id = RouteParameter.Optional }
                 );
 
@@ -71,8 +76,6 @@ namespace DynamicInjection
                     }
                     catch { }
                 }
-
-                builder.RegisterApiControllers(this.GetType().Assembly);
             }
         }
     }
